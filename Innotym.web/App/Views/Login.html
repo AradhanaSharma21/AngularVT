@@ -1,0 +1,230 @@
+﻿<div class="container " style="margin-top:40px">
+
+    <!--<h2>{{message}}</h2>
+    <span ng-bind="message"></span><br />
+
+    <button ng-click="increment()">Click</button><br />
+    <label>{{sum}}</label><br />
+    <hr />
+    <label>{{controllerName}}</label><br />
+    <label>{{msg}}</label>-->
+    <div id="LoginBox" ng-show="ShowLogin" style="margin-top:40px;margin-bottom:100px">
+        
+            <div class="row">
+                
+                <div class="col-md-6 offset-md-3">
+
+
+                    <div class="card">
+                        <div class="card-header ">Sign In</div>
+                        <div class="card-body">
+                            <form  role="form" name="SignInForm" novalidate>
+                                <div class="row">
+                                    <div class="col-sm-12  ">
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="fa fa-user"></i>
+                                                    </span>
+                                                </div>
+                                                <input class="form-control" placeholder="Email" name="loginEmail" type="text"  autofocus ng-model="loginData.Email" ng-class="{'has-error':SignInForm.loginname.$invalid && SignInForm.loginname.$dirty}" required>
+                                            </div>
+                                            <div>
+                                              <span class="text-danger" ng-if="SignInForm.loginEmail.$error.required && SignInForm.loginname.$dirty">
+                                                 <small>*Email is required*</small>
+                                              </span>
+                                              <span class="text-danger" ng-if="SignInForm.loginEmail.$error.email">
+                                                 <small>*This is not a valid email*</small>
+                                              </span>
+                                           </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">
+                                                        <i class="fa fa-lock"></i>
+                                                    </span>
+                                                </div>
+                                                <input class="form-control" placeholder="Password" name="password" type="password" ng-model="loginData.Pass" ng-class="{'has-error':SignInForm.password.$invalid && SignInForm.password.$dirty}" required><br />
+                                            </div>
+                                            <div>
+                                                <span class="text-danger" ng-if="SignInForm.password.$error.required && SignInForm.password.$dirty">
+                                                <small>*Password is required*</small>
+                                                </span>
+                                            </div>
+                                        </div>
+                                   
+
+
+                                        <div class="form-group pull-left">
+                                            <input type="button" class="btn btn-sm btn-primary" value="Sign in" ng-disabled="SignInForm.$pristine || SignInForm.$dirty && SignInForm.$invalid" ng-click="login()">
+
+                                        </div><br />
+                                        <hr style="height:1px;border:none;color:#757575;background-color:#757575;"/>
+                                        Don't have an account! <a href="" ng-click="ShowRegisterPanel()"> Sign Up Here </a>
+                                    </div><!--col-sm-12-->
+                                    
+                                   
+                                </div><!--nested row-->
+
+                            </form>
+                        </div> <!--card-body-->
+                        
+                        </div> <!--card-->
+                    </div> <!--col-md-6 offset-md3--->
+                </div> <!--row-->
+   </div> <!--LoginBox-->
+
+    <div class="alert alert-danger alert-dismissible"  ng-show="invalidAlert">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h5 class="font-italic text-danger">Sorry...Invalid Username or Passward!!</h5>
+   </div> 
+
+        
+
+        
+       
+            
+
+    <div id="SignUpBox" ng-show="ShowRegister"  style="margin-top:40px;margin-bottom:40px ">
+           <div class="row">
+               <div class="col-md-6 offset-md-3">
+                   <div class="card">
+                       <div class="card-header">Sign Up <small class="pull-right"><a href="" ng-click="ShowLoginPanel()"> Sign In </a></small></div>
+                       <div class="card-body">
+                           <form class="form-horizontal" name="SignUpForm" role="form" novalidate>
+                               <div class="row">
+                                   <div class="col-lg-12">
+                                       <div class="form-group">
+                                           <div class="row">
+                                               <label for="UserName" class="col-sm-3 control-label">User Name: </label>
+                                               <div class="col-sm-9">
+                                                   <input class="form-control" type="text" name="UserName" placeholder="User Name" autofocus ng-model="registerData.Uname"  ng-class="{'has-error':SignUpForm.UserName.$invalid && SignUpForm.UserName.$dirty}" required>
+                                               <div>
+                                                   <span class="text-danger" ng-if="SignUpForm.UserName.$error.required && SignUpForm.UserName.$dirty">
+                                                       <small>*Username is required*</small>
+                                                   </span>
+                                               </div>
+                                               </div> <!--col-sm-9-->
+                                           </div> <!--row-->
+                                       </div> <!--form-group-->
+
+                                       <div class="form-group">
+                                           <div class="row">
+                                               <label for="Email" class="col-sm-3 control-label">Email: </label>
+                                               <div class="col-sm-9" >
+                                                   <input class="form-control" type="email" name="Email" placeholder="Email address" ng-model="registerData.Email" ng-class="{'has-error':SignUpForm.Email.$invalid && SignUpForm.Email.$dirty}" required>
+                                                   <div>
+                                                       <span class="text-danger" ng-if="SignUpForm.Email.$error.required && SignUpForm.Email.$dirty">
+                                                           <small>*Email is required*</small>
+                                                       </span>
+                                                       <span class="text-danger" ng-if="SignUpForm.Email.$error.email">
+                                                           <small>*This is not a valid email*</small>
+                                                       </span>
+                                                   </div>
+                                               </div> <!--col-sm-9-->
+                                           </div> <!--row-->
+                                       </div> <!--form-group-->
+
+                                       <div class="form-group">
+                                           <div class="row">
+                                               <label for="Pswrd" class="col-sm-3 control-label">Password: </label>
+                                               <div class="col-sm-9" >
+                                                   <input class="form-control" type="password" name="Pswrd" placeholder="Password" ng-model="registerData.Passwords" ng-class="{'has-error':SignUpForm.Pswrd.$invalid && SignUpForm.Pswrd.$dirty}" required>
+                                                   <div>
+                                                       <span class="text-danger" ng-if="SignUpForm.Pswrd.$error.required && SignUpForm.Pswrd.$dirty">
+                                                           <small>*Password is required*</small>
+                                                       </span>
+                                                   </div>
+                                               </div> <!--col-sm-9-->
+                                           </div> <!--row-->
+                                       </div> <!--form-group-->
+
+                                       <div class="form-group">
+                                           <div class="row">
+                                               <label for="MobNo" class="col-sm-3 control-label">Mobile: </label>
+                                               <div class="col-sm-9">
+                                                   <input class="form-control" type="text" id="MobNo" placeholder="Phone Number" ng-model="registerData.PhoneNo">
+                                               </div> <!--col-sm-9-->
+                                           </div> <!--row-->
+                                       </div> <!--form-group-->
+
+                                       <div class="form-group">
+                                           <div class="row ">
+                                               <label for="Gender" class="col-sm-3 control-label">Gender: </label>
+                                               <div class="col-sm-9">
+                                                   <div class="form-check form-check-inline">
+                                                       <input class="form-check-input" type="radio" name="Gender" id="Female" value="Female" ng-model="registerData.Gender" >
+                                                       <label class="form-check-label" for="Female">Female</label>
+                                                   </div>
+                                                   <div class="form-check form-check-inline">
+                                                       <input class="form-check-input" type="radio" name="Gender" id="Male" value="Male" ng-model="registerData.Gender">
+                                                       <label class="form-check-label" for="Male">Male</label>
+                                                   </div> 
+                                               </div> <!--col-sm-9-->
+                                           </div> <!--row-->
+                                       </div> <!--form-group-->
+
+                                       <div class="form-group">
+                                           <div class="row">
+                                               <label for="Amount" class="col-sm-3 control-label">Amount: </label>
+                                               <div class="col-sm-9" >
+                                                   <input class="form-control" type="text" name="Amount" placeholder="Amount" ng-model="registerData.Amount" ng-class="{'has-error':SignUpForm.Amount.$invalid && SignUpForm.Amount.$dirty}" required>
+                                                   <div>
+                                                       <span class="text-danger" ng-if="SignUpForm.Amount.$error.required && SignUpForm.Amount.$dirty">
+                                                           <small>*Amount is required*</small>
+                                                       </span>
+                                                   </div>
+                                               </div> <!--col-sm-9-->
+                                           </div> <!--row-->
+                                       </div> <!--form-group-->
+
+
+                                       <div class="form-group">
+                                           <div class="row">
+                                               <label for="Amount" class="col-sm-3 control-label">Age: </label>
+                                               <div class="col-sm-9">
+                                                   <input class="form-control" type="number" id="Age" placeholder="Age" ng-model="registerData.Age">
+                                               </div> <!--col-sm-9-->
+                                           </div> <!--row-->
+                                       </div> <!--form-group-->
+                                       <hr style="height:1px;border:none;color:#757575;background-color:#757575;" />
+                                      
+                                   </div> <!--col-lg-12-->
+                                   
+                                   <div class="form-group offset-2">
+
+                                       
+                                       <button type="button" class="btn btn-primary offset-5" ng-disabled="SignUpForm.$pristine || SignUpForm.$dirty && SignUpForm.$invalid" ng-click="register()">Sign Up</button>
+                                       
+
+                                   </div>
+                                     
+
+                               </div> <!--row2-->
+
+                           </form>
+
+                       </div> <!--card-body-->
+                      
+                
+
+                   </div> <!--card-->
+
+               </div><!--col-md-6 offset-md-3-->
+
+           </div> <!--row1-->
+
+        
+
+    </div> <!--SignUpBox-->
+
+    <div class= "alert alert-success " role="alert" ng-show="SuccessfulRegisterAlert">
+        <h5 class="font-italic text-success">Congratulation... you are successfully registered!! Now please SignIn for the further process.</h5>
+    </div> 
+
+
+
+</div>  <!--container " style="margin-top:40px-->

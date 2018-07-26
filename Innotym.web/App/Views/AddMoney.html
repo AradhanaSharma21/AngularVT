@@ -1,0 +1,61 @@
+﻿<div name="AddMoneyBox"  style="margin-top:40px;margin-bottom:40px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">Add Money</div>
+                <div class="card-body">
+                    <form class="form-horizontal" role="form" name="AddMoney" novalidate>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="EnterAmount" class="col-sm-3 control-label">Enter Amount: </label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="EnterAmount" placeholder="Enter Amount" data-ng-model="addAmount" autofocus ng-class="{'has-error':AddMoney.EnterAmount.$invalid && AddMoney.EnterAmount.$dirty}" required>
+                                            
+                                            <div>
+                                                <span class="text-danger" ng-if="AddMoney.EnterAmount.$error.required && AddMoney.EnterAmount.$dirty">
+                                                    <small>*This field is required*</small>
+                                                </span>
+                                            </div>
+                                        </div> <!--col-sm-9-->
+                                    </div> <!--row-->
+                                </div> <!--form-group-->
+
+                               
+
+
+
+
+
+
+                                <hr style="height:1px;border:none;color:#757575;background-color:#757575;" />
+
+
+                            </div> <!--col-lg-12-->
+
+
+
+                            <div class="form-group">
+
+                                <center><input type="submit" class="btn btn-primary offset-2" value="Submit" data-ng-click="AddAmount(addAmount)" ng-disabled="AddMoney.$pristine || AddMoney.$dirty && AddMoney.$invalid"></center>
+
+                            </div>
+
+
+                        </div> <!--row2-->
+
+                    </form>
+
+                </div> <!--card-body-->
+
+
+            </div> <!--card-->
+
+        </div><!--col-md-6 offset-md-3-->
+
+    </div> <!--row1-->
+
+
+
+</div> <!--AddMoneyBox-->

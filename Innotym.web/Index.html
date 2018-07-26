@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="InnotymApp" >
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <!-- begin base css files -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/Style.css" rel="stylesheet" />
+	
+</head>
+<body  >
+    <div ng-include="'App/Header/Header.html'"></div>
+    <!--<a href="#!/Home">Home</a>
+    <a href="#Login">Login</a>-->
+
+    
+    <div ng-view></div>
+   
+    <div ng-include="'App/Footer/Footer.html'"></div>
+    
+   <!--<div> first
+        <input type="number" ng-model="txtno1"  />
+        <input type="number" ng-model="txtno2"  />
+        <br />
+        <br />
+        <input type="button" value="Add" ng-click="result = txtno1 + txtno2" />
+        <input type="button" value="Sub" ng-click="result = txtno1 - txtno2" />
+        <input type="button" value="Mul" ng-click="result = txtno1 * txtno2" />
+        <input type="button" value="Div" ng-click="result = txtno1 % txtno2" /><br /><br />
+
+
+        Answer: <label id="lblResult" >{{result}}</label>
+                       
+
+    </div>
+    <div>
+        <div ng-init="count= 0">
+            <button value="Count"  ng-click="count = count + 1">Add one
+            </button>
+            <h3>Double the count is: {{2 * count}}</h3>
+
+
+        </div>
+    </div> --> 
+
+    <!--<div ng-submit="CalcResult()">   second
+        <form class="form-group">
+            <label for="Number1">Enter number 1</label>
+            <input type="number" class="form-control" placeholder="Enter enter 1st number: " ng-model="number1" />
+            <br /><br />
+            <label for="Number2">Enter number 2</label>
+            <input type="number" class="form-control" placeholder="Enter enter 1st number: " ng-model="number2" />
+            <br /><br />
+
+            <label for="operation">Select Operation</label>
+
+            <select ng-model="Operation">
+                <option selected="selected" value="Add">Add</option>
+                <option  value="Substract">Subtract</option>
+                <option  value="Multiply">Multiply</option>
+                <option  value="Divide">Divide</option>
+            </select><br /><br />
+            <button type="submit">Show Result</button>
+            <br /><br />
+            <lable for="Result">Result: {{result}}</lable>
+            
+
+
+
+
+        </form>
+    </div>-->
+
+    
+    <!--<div ng-submit="CalcResult()">
+       
+        <form class="form-group">
+            <label for="Number1">Enter number 1</label>
+            <input type="number" class="form-control" placeholder="Enter enter 1st number: " ng-model="number1" />
+            <br /><br />
+            <label for="Number2">Enter number 2</label>
+            <input type="number" class="form-control" placeholder="Enter enter 1st number: " ng-model="number2" />
+            <br /><br />
+
+            <label for="operation">Select Operation</label>
+
+            
+                <input type="button"  value="Add" ng-click="Add()"/>
+                <input type="button" value="Sub" ng-click="Sub()" />
+                <input type="button" value="Mul" ng-click="Mul()" />
+                <input type="button" value="Div" ng-click="Div()" />
+               
+            <br /><br />
+            
+            <lable for="Result">Result: {{result}}</lable>
+
+
+
+
+
+        </form>
+    </div>-->
+  
+
+    <!-- begin base js files -->
+    <script src="scripts/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+   
+
+
+    <!-- Load application module-->
+    <script src="App/app.js"></script>
+   
+
+
+    <!-- Load controller module-->
+    <script src="App/Header/HeaderController.js"></script>
+    <script src="App/Controller/HomeController.js"></script>
+    <script src="App/Controller/LoginController.js"></script>
+    <script src="App/Controller/TransactionController.js"></script>
+
+    <!-- Load services module-->
+    <script src="App/Services/userService.js"></script>
+    <script src="App/Services/TransactionServices.js"></script>
+</body>
+
+</html>

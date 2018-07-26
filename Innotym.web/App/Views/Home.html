@@ -1,0 +1,49 @@
+﻿
+<h1>Home Page</h1>
+<label>{{controllerName}}</label><br />
+<label>{{msg}}</label>
+
+
+<table class="col-sm-10 table table-bordered table-hover">
+    <thead class="table-secondary">
+        <tr>
+            <th>UserName</th>
+            <th>FirstName</th>
+            <th>Gender</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="UserDetail in user">
+
+            <td>{{UserDetail.UserName}}</td>
+            <td>{{UserDetail.FirstName}}</td>
+            <td>{{UserDetail.Gender}}</td>
+
+        </tr>
+    </tbody>
+</table>
+
+<br />
+<br />
+
+
+<table class="table table-bordered table-hover ">
+    <thead class="table-secondary">
+        <tr>
+            <th scope="col">UserName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="UserDetail1 in PrintDB">
+
+            <td scope="col">{{UserDetail1.Uname}}</td>
+            <td scope="col">{{UserDetail1.Email}}</td>
+            <td scope="col">{{UserDetail1.Passwords}}</td>
+        </tr>
+    </tbody>
+</table>
+

@@ -1,0 +1,29 @@
+﻿<div class="container-fluid" style="margin-top:40px;" ng-init="getTransaction()">
+    <div class="table-responsive" >
+        <center> <h2 class="font-italic" ><strong>My Transaction List</strong></h2></center><br /><br />
+        <table class="table table-bordered table-hover">
+            <thead class="table-secondary">
+                <tr>
+                    <th scope="col">Transaction Id</th>
+                    <th scope="col">Reffrence User Id</th>
+                    <th scope="col">Transaction Type</th>
+                    <th scope="col">Initial Amount</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Reffrence UserName</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-ng-repeat="Transactions in transactionList">
+                    <td>{{Transactions.TransId}}</td>
+                    <td>{{Transactions.RefId}}</td>
+                    <td>{{Transactions.TransType}}</td>
+                    <td>{{Transactions.InitialAmount}}</td>
+                    <td>{{Transactions.Amount}}</td>
+                    <td>{{Transactions.UserDetail.Uname}}</td>
+                </tr>
+            </tbody>
+
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\bin\Debug\Innotym.data.dll.config
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\bin\Debug\Innotym.data.dll
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\bin\Debug\Innotym.data.pdb
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\bin\Debug\EntityFramework.dll
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\bin\Debug\EntityFramework.xml
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\obj\Debug\Innotym.data.csprojResolveAssemblyReference.cache
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\obj\Debug\Innotym.data.dll
+C:\Users\CG-DTE\Documents\Visual Studio 2015\Projects\Innotym\Innotym.data\obj\Debug\Innotym.data.pdb

@@ -1,0 +1,93 @@
+﻿<div name="DoTransactionBox" ng-init="getTransactionUsers()" style="margin-top:40px;margin-bottom:40px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card">
+                <div class="card-header">Do Transactions</div>
+                <div class="card-body">
+                    <form class="form-horizontal" role="form" name="DoTransaction" novalidate>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="TrasType" class="col-sm-3 control-label">Transaction type: </label>
+                                        <div class="col-sm-9">
+                                             <select class="form-control"  name="TrasType" data-ng-model="transactionData.TransType" ng-class="{'has-error':DoTransaction.TrasType.$invalid && DoTransaction.TrasType.$dirty}" required>
+                                                 <option value="Debit">Debit</option>
+                                                 <option value="Credit">Credit</option>
+                                             </select>
+                                           <div>
+                                                <span class="text-danger" ng-if="DoTransaction.TrasType.$error.required && DoTransaction.TrasType.$dirty">
+                                                    <small>*This field is required*</small>
+                                                </span>
+                                            </div>
+                                        </div> <!--col-sm-9-->
+                                    </div> <!--row-->
+                                </div> <!--form-group-->
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="TransTo" class="col-sm-3 control-label">Transaction to:</label>
+                                        <div class="col-sm-9">
+                                                <select class="form-control"  name="TransTo" data-ng-model="transactionData.refUser" ng-class="{'has-error':DoTransaction.TransTo.$invalid && DoTransaction.TransTo.$dirty}" required >
+                                                    <option data-ng-repeat="user in users" data-ng-value="user">
+                                                        {{user.Uname}}
+                                                    </option>                
+                                                </select>
+                                            <div>
+                                                <span class="text-danger" ng-if="DoTransaction.TransTo.$error.required && DoTransaction.TransTo.$dirty">
+                                                    <small>*This field is required*</small>
+                                                </span>
+                                            </div>
+                                        </div> <!--col-sm-9-->
+                                    </div> <!--row-->
+                                </div> <!--form-group-->
+
+                                <div class="form-group">
+                                    <div class="row">
+                                        <label for="TransAmount" class="col-sm-3 control-label">Amount: </label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" data-ng-model="transactionData.Amount" name="TransAmount" placeholder="Amount" ng-class="{'has-error':DoTransaction.TransAmount.$invalid && DoTransaction.TransAmount.$dirty}" required>
+                                            <div>
+                                                <span class="text-danger" ng-if="DoTransaction.TransAmount.$error.required && DoTransaction.TransAmount.$dirty">
+                                                    <small>*Amount is required*</small>
+                                                </span>
+                                            </div>
+                                        </div> <!--col-sm-9-->
+                                    </div> <!--row-->
+                                </div> <!--form-group-->
+
+
+
+
+
+
+                                <hr style="height:1px;border:none;color:#757575;background-color:#757575;" />
+
+
+                            </div> <!--col-lg-12-->
+                            
+
+
+                            <div class="form-group">
+
+                                <center><input type="submit" class="btn btn-primary offset-2" value="Submit" data-ng-click="doTransaction()" ng-disabled="DoTransaction.$pristine || DoTransaction.$dirty && DoTransaction.$invalid"></center>
+
+                            </div>
+
+
+                        </div> <!--row2-->
+
+                    </form>
+
+                </div> <!--card-body-->
+
+
+            </div> <!--card-->
+
+        </div><!--col-md-6 offset-md-3-->
+
+    </div> <!--row1-->
+
+
+
+</div> <!--DoTransactionBox-->

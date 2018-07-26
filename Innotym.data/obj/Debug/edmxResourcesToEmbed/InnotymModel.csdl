@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="InnotymModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="TransId" />
+    </Key>
+    <Property Name="TransId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="RefId" Type="Int32" />
+    <Property Name="TransType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="InitialAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="UserDetail" Relationship="Self.FK__Transacti__RefId__267ABA7A" FromRole="Transactions" ToRole="UserDetails" />
+    <NavigationProperty Name="UserDetail1" Relationship="Self.FK__Transacti__UserI__25869641" FromRole="Transactions" ToRole="UserDetails" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Uname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="254" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Passwords" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="ImgUrl" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Transactions" Relationship="Self.FK__Transacti__RefId__267ABA7A" FromRole="UserDetails" ToRole="Transactions" />
+    <NavigationProperty Name="Transactions1" Relationship="Self.FK__Transacti__UserI__25869641" FromRole="UserDetails" ToRole="Transactions" />
+  </EntityType>
+  <Association Name="FK__Transacti__RefId__267ABA7A">
+    <End Role="UserDetails" Type="Self.UserDetail" Multiplicity="0..1" />
+    <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="RefId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transacti__UserI__25869641">
+    <End Role="UserDetails" Type="Self.UserDetail" Multiplicity="0..1" />
+    <End Role="Transactions" Type="Self.Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Transactions">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="InnotymEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+    <AssociationSet Name="FK__Transacti__RefId__267ABA7A" Association="Self.FK__Transacti__RefId__267ABA7A">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transacti__UserI__25869641" Association="Self.FK__Transacti__UserI__25869641">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Transactions" EntitySet="Transactions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
